@@ -58,6 +58,12 @@ Please refer to the Helm chart in the [chart](chart) directory for more details.
 
 Currently, the CI/CD is configured to deploy the application to the dedicated `hello-world` namespace in the Kubernetes cluster, creating it if it doesn't exist.
 
+The application is exposed via `Ingress` and a `LoadBalancer` service type and it can be accessed using something like this (example for macOS):
+
+```shell
+open http://$(kubectl get svc --namespace hello-world hello-world --template "{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}") 
+```
+
 ## Author
 
 [Sergei Kolobov](mailto:skolobov@gmail.com)
