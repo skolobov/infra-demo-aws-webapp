@@ -1,0 +1,11 @@
+# Ignore the Docker files
+Dockerfile
+.dockerignore
+
+# Ignore any other unneeded files or directories
+*.md
+*.pyc
+__pycache__/
+.venv/
+.github/
+.ruff_cache/
