@@ -28,8 +28,6 @@ terraform init --upgrade
 
 ### 3. (Optional) Configure Backend
 
-3. Configure Backend (Optional)
-
 By default, this configuration uses Terraform Cloud as the backend. To use a different Terraform Cloud organization or workspace, modify (or comment out to disable) the following `cloud` block in `providers.tf` file:
 
 ```hcl
