@@ -14,6 +14,7 @@ module "ecr" {
         rulePriority = 1,
         description  = "Keep last 10 images",
         selection = {
+          tagStatus   = "any"
           countType   = "imageCountMoreThan",
           countNumber = 10
         },
