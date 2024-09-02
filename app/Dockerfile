@@ -3,7 +3,7 @@ FROM python:3.12-slim
 
 # Install curl for the healthcheck
 RUN apt-get update && \
-    apt-get install --yes --no-install-recommends curl=7.88.1-10+deb12u6 && \
+    apt-get install --yes --no-install-recommends curl && \
     rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user and group
