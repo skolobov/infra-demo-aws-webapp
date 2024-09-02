@@ -57,6 +57,9 @@ module "eks" {
       max_size     = 3
       desired_size = 2
 
+      iam_role_additional_policies = {
+        ecr_read_only = aws_iam_policy.eks_ecr_read_only.arn,
+      }
     }
   }
 
