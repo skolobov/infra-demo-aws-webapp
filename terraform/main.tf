@@ -56,3 +56,9 @@ module "eks" {
     }
   }
 }
+
+resource "kubernetes_namespace" "namespace" {
+  metadata {
+    name = var.k8s_namespace
+  }
+}
