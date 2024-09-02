@@ -9,3 +9,9 @@ variable "prefix" {
   type        = string
   default     = "hello-world"
 }
+
+variable "k8s_namespace" {
+  description = "Kubernetes namespace to deploy to"
+  type        = string
+  default     = "hello-world"
+}

@@ -66,4 +66,21 @@ module "eks" {
   # Cluster access entry
   # To add the current caller identity as an administrator
   enable_cluster_creator_admin_permissions = true
+
+  access_entries = {
+    github_actions = {
+      principal_arn = module.github_actions_iam_role.iam_role_arn
+      policy_associations = {
+        deploy = {
+          policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSEditPolicy"
+          access_scope = {
+            type = "namespace"
+            namespaces = [
+              var.k8s_namespace,
+            ]
+          }
+        }
+      },
+    }
+  }
 }
