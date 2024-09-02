@@ -9,9 +9,3 @@ variable "prefix" {
   type        = string
   default     = "hello-world"
 }
-
-variable "k8s_workload_name" {
-  description = "Name of Kubernetes workload"
-  type        = string
-  default     = "hello-world"
-}
