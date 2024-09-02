@@ -10,12 +10,6 @@ variable "prefix" {
   default     = "hello-world"
 }
 
-variable "k8s_workload_namespace" {
-  description = "Name of Kubernetes namespace to deploy the workload in"
-  type        = string
-  default     = "hello-world"
-}
-
 variable "k8s_workload_name" {
   description = "Name of Kubernetes workload"
   type        = string
