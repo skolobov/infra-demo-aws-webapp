@@ -48,6 +48,7 @@ module "eks" {
           access_scope = {
             type = "namespace"
             namespaces = [
+              "kube-system",
               var.k8s_namespace,
             ]
           }
