@@ -30,6 +30,7 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: ${{ github.event_name != 'pull_request' }}
+          VALIDATE_CHECKOV: false # Too many issues in default Helm templates
           VALIDATE_PYTHON_PYLINT: false # Disable in favor of ruff and friends
           VALIDATE_TERRAFORM_TERRASCAN: false # until https://github.com/tenable/terrascan/issues/1390 is fixed
           VALIDATE_KUBERNETES_KUBECONFORM: false # breaks on Helm templates
