@@ -53,7 +53,10 @@ jobs:
           version: latest
 
       - name: Update kubeconfig
-        run: aws eks update-kubeconfig --name ${{ secrets.EKS_CLUSTER_NAME }}
+        run: |
+          aws eks update-kubeconfig \
+            --region eu-central-1 \
+            --name ${{ secrets.EKS_CLUSTER_NAME }}
 
       - name: Deploy with Helm
         run: |
