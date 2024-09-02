@@ -1,0 +1,24 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Don't search for .editorconfig in parent directories
+root = true
+
+# Default settings for all files
+[*]
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Markdown has special use for trailing whitespace
+[*.md]
+trim_trailing_whitespace = false
+
+# Python files
+[*.py]
+indent_style = space
+indent_size  = 4
+
+# Terraform/Terragrunt HCL files
+[*.tf,hcl}]
+indent_style = space
+indent_size  = 2
