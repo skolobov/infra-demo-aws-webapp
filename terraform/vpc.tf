@@ -16,11 +16,20 @@ module "vpc" {
     "10.49.2.0/24",
     "10.49.3.0/24",
   ]
+  public_subnet_tags = {
+    "kubernetes.io/role/elb"                  = "1"
+    "kubernetes.io/cluster/${var.prefix}-eks" = "shared"
+  }
+
   private_subnets = [
     "10.49.11.0/24",
     "10.49.12.0/24",
     "10.49.13.0/24",
   ]
+  private_subnet_tags = {
+    "kubernetes.io/cluster/${var.prefix}-eks" = "shared"
+  }
+
 
   enable_nat_gateway = true
   single_nat_gateway = true
