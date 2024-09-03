@@ -61,7 +61,7 @@ Currently, the CI/CD is configured to deploy the application to the dedicated `h
 The application is exposed via `Ingress` and a `LoadBalancer` service type and it can be accessed using something like this (example for macOS):
 
 ```shell
-open http://$(kubectl get svc --namespace hello-world hello-world --template "{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}") 
+open http://$(kubectl get ingress --namespace hello-world hello-world-chart --template "{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}") 
 ```
 
 ## Author
