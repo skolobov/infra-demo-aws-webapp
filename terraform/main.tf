@@ -1,6 +1,6 @@
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "20.20.0" # checkov:skip=CKV_TF_1
+  version = "20.24.0" # checkov:skip=CKV_TF_1
 
   cluster_name    = "${var.prefix}-eks"
   cluster_version = "1.30"
