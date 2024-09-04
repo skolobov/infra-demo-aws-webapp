@@ -1,6 +1,6 @@
 module "load_balancer_controller_irsa_role" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
-  version = "5.41.0" # checkov:skip=CKV_TF_1
+  version = "5.44.0" # checkov:skip=CKV_TF_1
 
   role_name = "${var.prefix}-load-balancer-controller-role"
 
