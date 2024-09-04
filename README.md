@@ -51,14 +51,14 @@ The following [checks](.github/workflows/checks.yml) are also run on every PR:
 
 ### 4. Deploy Application using Helm
 
-Once the image is publised to GHCR, the same workflow deploys the application
+Once the Docker image is published to ECR, the same workflow deploys the application
 to the Kubernetes cluster using Helm.
 
 Please refer to the Helm chart in the [chart](chart) directory for more details.
 
 Currently, the CI/CD is configured to deploy the application to the dedicated `hello-world` namespace in the Kubernetes cluster, creating it if it doesn't exist.
 
-The application is exposed via `Ingress` and a `LoadBalancer` service type and it can be accessed using something like this (example for macOS):
+The application is exposed via `Ingress` and a `LoadBalancer` service type and it can be accessed using something like this (example assumes macOS):
 
 ```shell
 open http://$(kubectl get ingress --namespace hello-world hello-world-chart --template "{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}") 
