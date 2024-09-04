@@ -1,9 +1,14 @@
-1. Get the application URL by running these commands:
+Get the application URL by running these commands:
 {{- if .Values.ingress.enabled }}
+  {{- if contains "LoadBalancer" .Values.service.type }}
+  export INGRESS=$(kubectl get ingress --namespace {{ .Release.Namespace }} {{ include "chart.fullname" . }} --template "{{"{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}"}}")
+  echo http://$INGRESS
+  {{- else }}
 {{- range $host := .Values.ingress.hosts }}
   {{- range .paths }}
   http{{ if $.Values.ingress.tls }}s{{ end }}://{{ $host.host }}{{ .path }}
   {{- end }}
+{{- end }}
 {{- end }}
 {{- else if contains "NodePort" .Values.service.type }}
   export NODE_PORT=$(kubectl get --namespace {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ include "chart.fullname" . }})
