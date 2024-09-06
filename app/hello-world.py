@@ -17,7 +17,7 @@ app_port = int(os.environ.get("APP_PORT", 8080))
 
 @app.route("/")
 def hello_world():
-    return "Hello Berlin!"
+    return "Hallo Deutschland!"
 
 
 @app.route("/health")
