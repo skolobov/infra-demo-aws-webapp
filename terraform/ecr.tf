@@ -1,6 +1,6 @@
 module "ecr" {
   source  = "terraform-aws-modules/ecr/aws"
-  version = "2.2.1" # checkov:skip=CKV_TF_1
+  version = "2.3.0" # checkov:skip=CKV_TF_1
 
   repository_name = var.prefix
 
