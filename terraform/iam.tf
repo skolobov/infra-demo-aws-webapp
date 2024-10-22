@@ -1,6 +1,6 @@
 module "github_actions_iam_role" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
-  version = "5.46.0" # checkov:skip=CKV_TF_1
+  version = "5.47.1" # checkov:skip=CKV_TF_1
 
   create_role  = true
   role_name    = "${var.prefix}-github-actions-role"
